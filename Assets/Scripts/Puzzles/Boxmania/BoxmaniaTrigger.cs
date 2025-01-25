@@ -5,7 +5,7 @@ public class BoxmaniaTrigger : MonoBehaviour
     [SerializeField] Boxmania BoxmaniaPuzzle;
 private void OnTriggerEnter(Collider trigger){
 
-    Debug.Log(trigger.tag);
+    
 
    
     BoxmaniaPuzzle.canBeActive = true;
