@@ -75,6 +75,7 @@ public class Audio : MonoBehaviour
                 right.Play();
             }
             else{
+                solutionPitches = new List<string>();
                 wrong.Play();
             }
         }
