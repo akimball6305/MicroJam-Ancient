@@ -13,10 +13,6 @@ private void OnTriggerEnter(Collider trigger){
 }
 
 private void OnTriggerExit(Collider trigger){
-
- 
-
-    
     BoxmaniaPuzzle.canBeActive = false;
     
 }
