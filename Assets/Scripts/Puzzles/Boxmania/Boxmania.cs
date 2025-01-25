@@ -115,7 +115,7 @@ public class Boxmania : MonoBehaviour
 	{
 
 		
-		Vector3 newPosition = new Vector3(yIndex + 0.0f, 0.5f, (-xIndex) + 0.0f);
+		Vector3 newPosition = new Vector3(xIndex + 0.0f, this.box.transform.localPosition.y, (yIndex) + 0.0f);
 		if (box == this.box)
 		{
 
