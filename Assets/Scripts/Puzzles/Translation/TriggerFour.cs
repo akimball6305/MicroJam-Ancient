@@ -7,7 +7,7 @@ public class TriggerFour : MonoBehaviour
 
     private void OnTriggerEnter(Collider trigger){
 
-        Debug.Log(trigger.tag);
+        
 
     
         translation.updateSolution("4");

@@ -7,7 +7,7 @@ public class TriggerNine : MonoBehaviour
 
     private void OnTriggerEnter(Collider trigger){
 
-        Debug.Log(trigger.tag);
+        
 
     
         translation.updateSolution("9");

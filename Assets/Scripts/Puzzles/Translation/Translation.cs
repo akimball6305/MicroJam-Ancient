@@ -5,7 +5,7 @@ public class Translation : MonoBehaviour
 {
 
     [SerializeField] TextMeshPro textBox;
-
+     [SerializeField] TextMeshPro shownField;
     private string[] nums = {"1","2","3","4","5","6","7","8","9"};
 
     private String[] choice =  {"1","2","3","4","5","6","7","8","9"};
@@ -13,10 +13,17 @@ public class Translation : MonoBehaviour
     public bool hasWon = false;
     private string solution = "";
     private string correctSolution = "";
+
+    public void Reset(){
+        solution = "";
+        shownField.text = "?????????";
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         textBox.text = "";
+        Reset();
         System.Random random = new System.Random();
         
         for(int c = 0; c < 9; c++){
@@ -27,6 +34,7 @@ public class Translation : MonoBehaviour
             
         }
         Debug.Log(correctSolution);
+         
     }
 
    public void updateSolution(String num){
@@ -36,14 +44,15 @@ public class Translation : MonoBehaviour
         }
 
         solution += num;
-        Debug.Log(solution);
+        shownField.text = solution;
         if (solution.Length == correctSolution.Length){
             if (solution == correctSolution){
                 hasWon = true;
                 Debug.Log("WINNER!");
+                shownField.text =  "---" + "\n..\n" + "\\_/";
             }
             else{
-                solution = "";
+                Reset();
             }
 
         }

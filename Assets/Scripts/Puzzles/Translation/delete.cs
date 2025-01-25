@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TriggerThree : MonoBehaviour
+public class TriggerTextReset : MonoBehaviour
 {
     [SerializeField] Translation translation;
 
@@ -10,7 +10,7 @@ public class TriggerThree : MonoBehaviour
         
 
     
-        translation.updateSolution("3");
+        translation.Reset();
     
     }
 }
