@@ -5,6 +5,9 @@ using TMPro;
 
 public class BasicPlayerMovement : MonoBehaviour
 {
+
+    [SerializeField] Boxmania BoxmaniaPuzzle;
+
     [Header("Movement")]
     public float moveSpeed;
 
@@ -81,6 +84,10 @@ public class BasicPlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        
+        if(BoxmaniaPuzzle.isActive){
+            return;
+        }
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
