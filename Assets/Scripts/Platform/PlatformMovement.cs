@@ -13,12 +13,16 @@ public class PlatformMovement : MonoBehaviour
     private bool isLowered = false; 
     private bool isMoving = false; 
 
+    public bool canRise = true;
     [SerializeField] TextMeshProUGUI instructions;
 
     void Update()
     {
         if (onPlatform && Input.GetKeyDown(KeyCode.E) && !isMoving)
         {
+            if (isLowered && !canRise){
+                return;
+            }
             isLowered = !isLowered;
             isMoving = true;
         }
@@ -52,6 +56,9 @@ public class PlatformMovement : MonoBehaviour
         {
             Debug.Log("Player entered the trigger. Press E to toggle the platform.");
             onPlatform = true;
+            if (isLowered && !canRise){
+                return;
+            }
             instructions.gameObject.SetActive(true);
         }
     }

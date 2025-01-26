@@ -8,6 +8,10 @@ public class BoxmaniaTrigger : MonoBehaviour
 private void OnTriggerEnter(Collider trigger){
 
     BoxmaniaPuzzle.canBeActive = true;
+
+    if(BoxmaniaPuzzle.didWin){
+        return;
+    }
     instructions.gameObject.SetActive(true);
 }
 
