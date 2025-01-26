@@ -10,11 +10,6 @@ public class FadeToBlack : MonoBehaviour
 
     [SerializeField] Image fadeImage;
 
-    private void Start()
-    {
-        FadeOut();
-    }
-
     public void FadeOut()
     { 
         StartCoroutine(FadeCoroutine(1f)); 
