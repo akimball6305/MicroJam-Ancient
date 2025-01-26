@@ -17,9 +17,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlatformMovement platform;
 
     [SerializeField] TextMeshProUGUI text;
+
+    [SerializeField] TextMeshProUGUI timerTextfield;
+
+    
     // Update is called once per frame
     private float timer = 0.0f;
-
+    private bool timerStarted = false;
     public string timerText(){
 
 
@@ -65,9 +69,19 @@ public class GameManager : MonoBehaviour
         }
         
 
-        if(total != 4 && platform.isLowered){
+        if(platform.isLowered){
+            timerStarted = true;
             timer += Time.deltaTime;
-            Debug.Log(timerText());
+            timerTextfield.text = timerText();
+            
+        }
+        else{
+
+            if (timerStarted){
+                timerStarted = false;
+                
+            }
+
         }
     }
 }

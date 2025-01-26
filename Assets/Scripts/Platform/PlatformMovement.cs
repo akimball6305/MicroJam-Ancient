@@ -10,7 +10,7 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField] float upperYPosition = 18f;
     [SerializeField] float speed = 2f;
     private bool onPlatform = false;
-    public bool isLowered = false; 
+    public bool isLowered = false;
     private bool isMoving = false;
 
     [SerializeField] NecklacePickUp necklace;
@@ -22,7 +22,8 @@ public class PlatformMovement : MonoBehaviour
     {
         if (onPlatform && Input.GetKeyDown(KeyCode.E) && !isMoving)
         {
-            if (isLowered && necklace.hasNecklace){
+            if (isLowered && !necklace.hasNecklace)
+            {
                 return;
             }
             isLowered = !isLowered;
@@ -37,7 +38,7 @@ public class PlatformMovement : MonoBehaviour
 
                 if (platform.position.y <= lowerYPosition)
                 {
-                    isMoving = false; 
+                    isMoving = false;
                 }
             }
             else if (!isLowered && platform.position.y < upperYPosition)
@@ -58,10 +59,12 @@ public class PlatformMovement : MonoBehaviour
         {
             Debug.Log("Player entered the trigger. Press E to toggle the platform.");
             onPlatform = true;
-            if (isLowered && necklace.hasNecklace)
+            if (isLowered && !necklace.hasNecklace)
             {
                 return;
             }
+           
+
             instructions.text = "Press E to interact";
 
             instructions.gameObject.SetActive(true);

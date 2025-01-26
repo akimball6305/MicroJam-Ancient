@@ -13,6 +13,7 @@ public class NecklacePickUp : MonoBehaviour
         {
             Destroy(gameObject);
             hasNecklace = true;
+           
         }
     }
 }
