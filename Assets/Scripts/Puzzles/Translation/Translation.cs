@@ -10,11 +10,14 @@ public class Translation : MonoBehaviour
 
     private String[] choice =  {"1","2","3","4","5","6","7","8","9"};
     
-    public bool hasWon = false;
+    public bool didWin = false;
     private string solution = "";
     private string correctSolution = "";
 
     public void Reset(){
+        if(didWin){
+            return;
+        }
         solution = "";
         shownField.text = "?????????";
     }
@@ -39,7 +42,7 @@ public class Translation : MonoBehaviour
 
    public void updateSolution(String num){
 
-        if(hasWon){
+        if(didWin){
             return;
         }
 
@@ -47,7 +50,7 @@ public class Translation : MonoBehaviour
         shownField.text = solution;
         if (solution.Length == correctSolution.Length){
             if (solution == correctSolution){
-                hasWon = true;
+                didWin = true;
                 Debug.Log("WINNER!");
                 shownField.text =  "---" + "\n..\n" + "\\_/";
             }
