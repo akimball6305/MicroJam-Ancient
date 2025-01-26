@@ -12,7 +12,10 @@ private void OnTriggerEnter(Collider trigger){
     if(BoxmaniaPuzzle.didWin){
         return;
     }
+    instructions.text = "Press E to interact then WASD to move puzzle";
+
     instructions.gameObject.SetActive(true);
+
 }
 
 private void OnTriggerExit(Collider trigger){

@@ -13,6 +13,7 @@ private void OnTriggerEnter(Collider trigger){
     if (mazePuzzle.didWin){
         return;
     }
+    instructions.text = "Press E to interact then WASD to move";
     instructions.gameObject.SetActive(true);
   
 }

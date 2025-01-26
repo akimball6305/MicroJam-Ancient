@@ -59,6 +59,8 @@ public class PlatformMovement : MonoBehaviour
             if (isLowered && !canRise){
                 return;
             }
+            instructions.text = "Press E to interact";
+
             instructions.gameObject.SetActive(true);
         }
     }

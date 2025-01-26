@@ -169,13 +169,13 @@ public class Maze : MonoBehaviour
 pattern = new GameObject[][]
 {
     new GameObject[] { box,    na,    na,    na,    na,    na,    na,    na,    na,    na },
-    new GameObject[] { na,     death, na,    na,    na,    na,    na,    na,    na,    na },
-    new GameObject[] { death,  wall,  death, na,    na,    na,    na,    death, na,    na },
-    new GameObject[] { na,     death, na,    na,    death, na,    death, wall,  death, na },
-    new GameObject[] { na,     na,    na,    na,    wall, na,    na,    death, wall,  na },
+    new GameObject[] { na,     death, na,    death,    na,    na,    na,    na,    na,    na },
+    new GameObject[] { death,  wall,  death, wall,  na,    na,    na,    death, na,    na },
+    new GameObject[] { na,     death, na,    death, death, na,    death, wall,  death, na },
+    new GameObject[] { na,     na,    na,    na,    wall,  na,    na,    death, wall,  na },
     new GameObject[] { na,     death, na,    na,    death, na,    na,    death, death, death },
     new GameObject[] { death,  wall,  death, na,    na,    na,    na,    na,    wall,  na },
-    new GameObject[] { na,     death, na,    death, wall,  death, na,    na,    death, na },
+    new GameObject[] { na,     death, na,    na, na,  death, wall,    death,    death, na },
     new GameObject[] { na,     na,    na,    na,    na,    na,    na,    na,    na,    na },
     new GameObject[] { na,     na,    na,    na,    na,    na,    na,    na,    na,    na }, 
 };
@@ -237,15 +237,15 @@ pattern = new GameObject[][]
 pattern = new GameObject[][]
 {
     new GameObject[] { box,    na,    na,    na,    na,    na,    na,    na,    na,    na },
-    new GameObject[] { na,     death, na,    na,    na,    na,    na,    na,    na,    na },
-    new GameObject[] { death,  wall,  death, na,    na,    na,    na,    death, na,    na },
-    new GameObject[] { na,     death, na,    na,    death, na,    death, wall,  death, na },
-    new GameObject[] { na,     na,    na,    na,    wall, na,    na,    death, wall,  na },
+    new GameObject[] { na,     death, na,    death, na,    na,    na,    na,    na,    na },
+    new GameObject[] { death,  wall,  death, wall,  na,    na,    na,    death, na,    na },
+    new GameObject[] { na,     death, na,    death, death, na,    death, wall,  death, na },
+    new GameObject[] { na,     na,    na,    na,    wall,  na,    na,    death, wall,  na },
     new GameObject[] { na,     death, na,    na,    death, na,    na,    death, death, death },
     new GameObject[] { death,  wall,  death, na,    na,    na,    na,    na,    wall,  na },
-    new GameObject[] { na,     death, na,    death, wall,  death, na,    na,    death, na },
+    new GameObject[] { na,     death, na,    na,    na,    death, wall,  death, death, na },
     new GameObject[] { na,     na,    na,    na,    na,    na,    na,    na,    na,    na },
-    new GameObject[] { na,     na,    na,    na,    na,    na,    na,    na,    na,    na }, 
+    new GameObject[] { na,     na,    na,    na,    na,    na,    na,    na,    na,    na },
 };
 
         boxArray = new GameObject[] { box };
