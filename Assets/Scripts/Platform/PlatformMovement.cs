@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlatformMovement : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlatformMovement : MonoBehaviour
     private bool onPlatform = false;
     private bool isLowered = false; 
     private bool isMoving = false; 
+
+    [SerializeField] TextMeshProUGUI instructions;
 
     void Update()
     {
@@ -49,6 +52,7 @@ public class PlatformMovement : MonoBehaviour
         {
             Debug.Log("Player entered the trigger. Press E to toggle the platform.");
             onPlatform = true;
+            instructions.gameObject.SetActive(true);
         }
     }
 
@@ -58,6 +62,7 @@ public class PlatformMovement : MonoBehaviour
         {
             Debug.Log("Player left the trigger.");
             onPlatform = false;
+            instructions.gameObject.SetActive(false);
         }
     }
 }
