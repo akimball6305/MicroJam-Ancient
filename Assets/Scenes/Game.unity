@@ -6993,6 +6993,7 @@ MonoBehaviour:
   audioPuzzle: {fileID: 690366901}
   translationPuzzle: {fileID: 1932518725}
   platform: {fileID: 1784615930}
+  text: {fileID: 0}
 --- !u!4 &1116458448
 Transform:
   m_ObjectHideFlags: 0
@@ -7452,7 +7453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 700}
+  m_AnchoredPosition: {x: 0, y: 450}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210032488
