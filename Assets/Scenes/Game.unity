@@ -6993,7 +6993,7 @@ MonoBehaviour:
   audioPuzzle: {fileID: 690366901}
   translationPuzzle: {fileID: 1932518725}
   platform: {fileID: 1784615930}
-  text: {fileID: 0}
+  text: {fileID: 1210032488}
 --- !u!4 &1116458448
 Transform:
   m_ObjectHideFlags: 0
