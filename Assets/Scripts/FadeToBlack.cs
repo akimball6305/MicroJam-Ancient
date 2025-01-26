@@ -9,18 +9,7 @@ public class FadeToBlack : MonoBehaviour
 
     public float fadeSpeed = 1f; 
 
-    private Image fadeImage;
-
-
-
-    void Start()
-
-    {
-
-        fadeImage = GetComponent<Image>(); 
-
-    }
-
+    [SerializeField] Image fadeImage;
 
 
     public void FadeOut()
