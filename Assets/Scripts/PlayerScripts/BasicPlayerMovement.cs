@@ -8,6 +8,8 @@ public class BasicPlayerMovement : MonoBehaviour
 
     [SerializeField] Boxmania BoxmaniaPuzzle;
 
+    [SerializeField] Maze maze;
+
     [Header("Movement")]
     public float moveSpeed;
 
@@ -85,7 +87,7 @@ public class BasicPlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         
-        if(BoxmaniaPuzzle.isActive){
+        if(BoxmaniaPuzzle.isActive || maze.isActive){
             return;
         }
         // calculate movement direction
