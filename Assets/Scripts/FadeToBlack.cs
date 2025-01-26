@@ -6,39 +6,18 @@ using System.Collections;
 
 public class FadeToBlack : MonoBehaviour
 {
+    public float fadeSpeed = .25f; 
 
-    public float fadeSpeed = 1f; 
-
-    private Image fadeImage;
-
-
-
-    void Start()
-
-    {
-
-        fadeImage = GetComponent<Image>(); 
-
-    }
-
-
+    [SerializeField] Image fadeImage;
 
     public void FadeOut()
-
-    {
-
+    { 
         StartCoroutine(FadeCoroutine(1f)); 
-
     }
 
-
-
     IEnumerator FadeCoroutine(float targetAlpha)
-
     {
-
         while (fadeImage.color.a < targetAlpha)
-
         {
 
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, fadeImage.color.a + (fadeSpeed * Time.deltaTime));
@@ -46,7 +25,5 @@ public class FadeToBlack : MonoBehaviour
             yield return null;
 
         }
-
     }
-
 }
