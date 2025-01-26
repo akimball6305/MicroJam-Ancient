@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI timerTextfield;
 
-    
+    [SerializeField] FadeToBlack fader;
     // Update is called once per frame
     private float timer = 0.0f;
     private bool timerStarted = false;
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
             if (timerStarted){
                 timerStarted = false;
-                
+                fader.FadeOut();
             }
 
         }
