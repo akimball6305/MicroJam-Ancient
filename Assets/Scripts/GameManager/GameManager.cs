@@ -2,6 +2,7 @@ using System;
 using Mono.Cecil.Cil;
 using UnityEngine;
 using TMPro;
+using NUnit.Framework;
 public class GameManager : MonoBehaviour
 {
 
@@ -17,13 +18,31 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI text;
     // Update is called once per frame
+    private float timer = 0.0f;
+
+    public string timerText(){
+
+
+        int mins = (int) (timer/60);
+        int seconds = (int) timer % 60;
+        int dec = (int) (100 * (timer - Math.Truncate(timer)));
+
+        return string.Format("{0:D2}:{1:D2}:{2:D2}", mins, seconds, dec);
+
+    }
+
+    
+    public bool hasWon = false;
 
     void Update()
     {
-
-        platform.canRise = boxmaniaPuzzle.didWin && mazePuzzle.didWin && audioPuzzle.didWin && translationPuzzle.didWin;
-
         int total = 0;
+
+
+        hasWon = boxmaniaPuzzle.didWin && mazePuzzle.didWin && audioPuzzle.didWin && translationPuzzle.didWin;
+
+        platform.canRise = hasWon;
+        
 
         if(boxmaniaPuzzle.didWin){
             total += 1;
@@ -42,5 +61,10 @@ public class GameManager : MonoBehaviour
             total += 1;
         }
         text.text = "Progress: " + total.ToString() + "/4";
+
+        if(total != 4 && platform.isLowered){
+            timer += Time.deltaTime;
+            Debug.Log(timerText());
+        }
     }
 }

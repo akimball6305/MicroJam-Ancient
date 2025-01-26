@@ -10,7 +10,7 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField] float upperYPosition = 18f;
     [SerializeField] float speed = 2f;
     private bool onPlatform = false;
-    private bool isLowered = false; 
+    public bool isLowered = false; 
     private bool isMoving = false; 
 
     public bool canRise = true;
