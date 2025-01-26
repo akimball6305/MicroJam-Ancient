@@ -41,9 +41,6 @@ public class GameManager : MonoBehaviour
 
         hasWon = boxmaniaPuzzle.didWin && mazePuzzle.didWin && audioPuzzle.didWin && translationPuzzle.didWin;
 
-        platform.canRise = hasWon;
-        
-
         if(boxmaniaPuzzle.didWin){
             total += 1;
         }
@@ -60,7 +57,13 @@ public class GameManager : MonoBehaviour
         if(translationPuzzle.didWin){
             total += 1;
         }
-        text.text = "Progress: " + total.ToString() + "/4";
+        if(!hasWon){
+            text.text = "Progress: " + total.ToString() + "/4";
+        }
+        else{
+            text.text = "Grab the necklace and escape!";
+        }
+        
 
         if(total != 4 && platform.isLowered){
             timer += Time.deltaTime;
