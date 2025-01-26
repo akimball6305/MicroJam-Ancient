@@ -11,16 +11,18 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField] float speed = 2f;
     private bool onPlatform = false;
     public bool isLowered = false; 
-    private bool isMoving = false; 
+    private bool isMoving = false;
 
-    public bool canRise = true;
+    [SerializeField] NecklacePickUp necklace;
+
+    //public bool canRise = true;
     [SerializeField] TextMeshProUGUI instructions;
 
     void Update()
     {
         if (onPlatform && Input.GetKeyDown(KeyCode.E) && !isMoving)
         {
-            if (isLowered && !canRise){
+            if (isLowered && necklace.hasNecklace){
                 return;
             }
             isLowered = !isLowered;
@@ -56,7 +58,8 @@ public class PlatformMovement : MonoBehaviour
         {
             Debug.Log("Player entered the trigger. Press E to toggle the platform.");
             onPlatform = true;
-            if (isLowered && !canRise){
+            if (isLowered && necklace.hasNecklace)
+            {
                 return;
             }
             instructions.text = "Press E to interact";

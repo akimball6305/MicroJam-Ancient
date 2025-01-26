@@ -4,8 +4,8 @@ public class NecklacePickUp : MonoBehaviour
 {
     [SerializeField] GameObject necklace;
     
-    GameManager gameManager;
-    bool hasNecklace = false;
+    [SerializeField] GameManager gameManager;
+    public bool hasNecklace = false;
 
     void OnTriggerEnter(Collider other)
     {
